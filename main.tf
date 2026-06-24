@@ -12,5 +12,8 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket"{
-    bucket = "sweety-terraform-bucket-2026"
+    bucket = var.bucket_name
+    tags = {
+        Environment = var.environment
+    }
 }
