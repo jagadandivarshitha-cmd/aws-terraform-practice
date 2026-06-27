@@ -39,7 +39,7 @@ resource "aws_security_group" "my_sg" {
 
 resource "aws_instance" "my_server"{
     ami = "ami-0521cb2d60cfbb1a6"
-    instance_type = "t3.micro"
+    instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.my_sg.id]
 
     tags = {
